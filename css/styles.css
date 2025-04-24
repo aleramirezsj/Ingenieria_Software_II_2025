@@ -1,0 +1,47 @@
+/*table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    font-family: Arial, sans-serif;
+}
+
+th, td {
+    padding: 12px;
+    text-align: left;
+    border: 1px solid #ddd;
+}
+
+th {
+    background-color: #4CAF50;
+    color: white;
+}
+
+tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+tr:hover {
+    background-color: #ddd;
+} */
+h1 {
+    background-image: url('../img/fondoflores.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: rgb(162, 236, 249);
+
+}
+
+h1, h2, h3 {
+    color: red;
+    font-size: 40px;
+    border: 1px solid black;
+    text-align: center;
+    font-family: 'Montserrat', Times, serif;
+}
+.cita{
+    font-style: italic;
+    text-align: center;
+    margin:60px;
+    border: 6px solid rgb(159, 35, 35);
+    padding: 15px;
+}
