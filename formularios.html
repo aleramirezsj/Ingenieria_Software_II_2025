@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>Registro de Invocador – League of Legends</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    :root {
+      --primary: #0a1428;      /* Azul oscuro estilo LoL */
+      --accent: #c89b3c;       /* Dorado LoL */
+      --bg: #f5f7fa;
+    }
+    body {
+      font-family: "Noto Sans", Arial, Helvetica, sans-serif;
+      background: var(--bg);
+      margin: 0;
+      color: #111;
+    }
+    header {
+      background: var(--primary);
+      color: #fff;
+      padding: 1rem 2rem;
+      text-align: center;
+    }
+    h1 {
+      margin: 0;
+      font-size: 1.8rem;
+    }
+    form {
+      max-width: 800px;
+      margin: 2rem auto;
+      background: #fff;
+      padding: 2rem 3rem;
+      box-shadow: 0 4px 10px rgba(0,0,0,.05);
+      border-left: 6px solid var(--accent);
+    }
+    fieldset {
+      border: 1px solid #ccc;
+      margin-bottom: 1.5rem;
+      padding: 1rem 1.5rem;
+    }
+    legend {
+      font-weight: 700;
+      color: var(--primary);
+      padding: 0 0.5rem;
+    }
+    label {
+      display: block;
+      margin-top: 1rem;
+      font-weight: 600;
+    }
+    input, select, textarea, datalist, button {
+      width: 100%;
+      padding: 0.5rem;
+      margin-top: 0.3rem;
+      border: 1px solid #bbb;
+      border-radius: 4px;
+      font-size: 1rem;
+    }
+    input[type="radio"], input[type="checkbox"] {
+      width: auto;
+      margin-right: 0.4rem;
+    }
+    .inline {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+    .inline > label {
+      margin-top: 0.2rem;
+      display: flex;
+      align-items: center;
+    }
+    .range-output {
+      font-weight: 700;
+      color: var(--primary);
+    }
+    button {
+      background: var(--primary);
+      color: #fff;
+      border: none;
+      cursor: pointer;
+      margin-top: 1rem;
+    }
+    button:hover {
+      background: #12264d;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Formulario de Registro de Invocador</h1>
+  </header>
+
+  <form action="#" method="post" enctype="multipart/form-data">
+    <input type="hidden" name="token" value="e1b2c3d4" />
+
+    <fieldset>
+      <legend>Información básica</legend>
+
+      <label for="summoner">Nombre de Invocador *</label>
+      <input id="summoner" name="summoner" type="text" required minlength="3" maxlength="16" placeholder="Tu nombre en LoL" />
+
+      <label for="email">Correo electrónico *</label>
+      <input id="email" name="email" type="email" required placeholder="ej: ejemplo@email.com" />
+
+      <label for="phone">Teléfono</label>
+      <input id="phone" name="phone" type="tel" pattern="[0-9\-\+\s]{7,15}" placeholder="+54 9 341 555-5555" />
+
+      <label for="password">Contraseña *</label>
+      <input id="password" name="password" type="password" required minlength="8" placeholder="Mín. 8 caracteres" />
+
+      <label for="region">Región *</label>
+      <select id="region" name="region" required>
+        <option value="">Selecciona tu región</option>
+        <option value="LA1">LAN (Latinoamérica Norte)</option>
+        <option value="LA2">LAS (Latinoamérica Sur)</option>
+        <option value="NA">NA (Norteamérica)</option>
+        <option value="EUW">EUW (Europa Oeste)</option>
+        <option value="EUNE">EUNE (Europa N&E)</option>
+        <option value="KR">KR (Corea)</option>
+      </select>
+
+      <label for="rank">Rango actual</label>
+      <input id="rank" name="rank" list="rankList" placeholder="Selecciona o escribe tu rango" />
+      <datalist id="rankList">
+        <option value="Hierro"></option>
+        <option value="Bronce"></option>
+        <option value="Plata"></option>
+        <option value="Oro"></option>
+        <option value="Platino"></option>
+        <option value="Esmeralda"></option>
+        <option value="Diamante"></option>
+        <option value="Master"></option>
+        <option value="Grandmaster"></option>
+        <option value="Challenger"></option>
+      </datalist>
+
+      <label for="seasons">Número de temporadas jugadas</label>
+      <input id="seasons" name="seasons" type="number" min="1" max="15" value="1" />
+
+      <label for="created">Fecha de creación de la cuenta</label>
+      <input id="created" name="created" type="date" />
+
+      <label for="lastLogin">Último inicio de sesión</label>
+      <input id="lastLogin" name="lastLogin" type="datetime-local" />
+    </fieldset>
+
+    <fieldset>
+      <legend>Preferencias de juego</legend>
+
+      <label>Rol principal *</label>
+      <div class="inline">
+        <label><input type="radio" name="role" value="Top" required /> Top</label>
+        <label><input type="radio" name="role" value="Jungla" /> Jungla</label>
+        <label><input type="radio" name="role" value="Mid" /> Mid</label>
+        <label><input type="radio" name="role" value="ADC" /> ADC</label>
+        <label><input type="radio" name="role" value="Soporte" /> Soporte</label>
+      </div>
+
+      <label>Tipos de campeón preferidos</label>
+      <div class="inline">
+        <label><input type="checkbox" name="championType" value="Asesino" /> Asesino</label>
+        <label><input type="checkbox" name="championType" value="Mago" /> Mago</label>
+        <label><input type="checkbox" name="championType" value="Tanque" /> Tanque</label>
+        <label><input type="checkbox" name="championType" value="Luchador" /> Luchador</label>
+        <label><input type="checkbox" name="championType" value="Tirador" /> Tirador</label>
+        <label><input type="checkbox" name="championType" value="Soporte" /> Soporte</label>
+      </div>
+
+      <label for="favColor">Color de equipo favorito</label>
+      <input id="favColor" name="favColor" type="color" value="#c89b3c" />
+
+      <label for="hoursWeek">Horas de juego por semana <span class="range-output" id="hoursLabel">10</span></label>
+      <input id="hoursWeek" name="hoursWeek" type="range" min="1" max="80" value="10" step="1" oninput="document.getElementById('hoursLabel').textContent=this.value" />
+
+      <label for="avatar">Avatar de invocador (PNG/JPG)</label>
+      <input id="avatar" name="avatar" type="file" accept="image/png, image/jpeg" />
+
+      <label for="twitch">Canal de Twitch</label>
+      <input id="twitch" name="twitch" type="url" placeholder="https://www.twitch.tv/tuusuario" />
+
+      <label for="bio">Biografía</label>
+      <textarea id="bio" name="bio" rows="4" placeholder="Cuéntanos algo sobre ti..."></textarea>
+    </fieldset>
+
+    <fieldset>
+      <legend>Confirmación</legend>
+      <label class="inline"><input type="checkbox" name="terms" required /> Acepto los términos y condiciones *</label>
+    </fieldset>
+
+    <button type="submit">Registrar Invocador</button>
+  </form>
+
+</body>
+</html>

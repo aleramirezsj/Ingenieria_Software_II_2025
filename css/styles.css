@@ -45,3 +45,8 @@ h1, h2, h3 {
     border: 6px solid rgb(159, 35, 35);
     padding: 15px;
 }
+
+p, strong {
+    border: 1px solid black;
+    display: inline ;
+}

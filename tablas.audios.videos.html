@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>Ejemplos de Tabla, Audio y Video</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    body {
+      font-family: "Noto Serif", Georgia, "Times New Roman", serif;
+      margin: 2rem;
+      background: #f4f9ff;
+      color: #222;
+    }
+    h1 {
+      color: #003f7d;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 2rem;
+    }
+    thead {
+      background: #003f7d;
+      color: #fff;
+    }
+    th, td {
+      border: 1px solid #ccc;
+      padding: 0.6rem;
+      text-align: left;
+    }
+    tbody tr:nth-child(even) {
+      background: #e8f0ff;
+    }
+    figure {
+      margin: 2rem 0;
+    }
+    figcaption {
+      font-size: 0.9rem;
+      color: #555;
+      margin-top: 0.5rem;
+    }
+  </style>
+</head>
+<body>
+  <h1>Demostración de elementos multimedia y tablas en HTML5</h1>
+
+  <h2>1. Tabla: Horario de Misas</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>Día</th>
+        <th>Horario</th>
+        <th>Celebrante</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Lunes</td>
+        <td>07:00</td>
+        <td>Padre Juan</td>
+      </tr>
+      <tr>
+        <td>Miércoles</td>
+        <td>12:00</td>
+        <td>Monseñor Carlos</td>
+      </tr>
+      <tr>
+        <td>Domingo</td>
+        <td>10:00</td>
+        <td>
+            <a href="https://www.isp20.edu.ar">
+                <img width="60px" src="https://www.w3schools.com/html/img_girl.jpg" alt="Imagen de prueba">
+            </a>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h2>2. Audio: Pista de muestra (demo)</h2>
+  <figure>
+    <audio controls>
+      <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg" />
+      Tu navegador no soporta la etiqueta <code>audio</code>.
+    </audio>
+    <figcaption>Audio de demostración hospedado en soundhelix.com (licencia libre).</figcaption>
+  </figure>
+
+  <h2>3. Video: Trailer Sintel (demo)</h2>
+  <figure>
+    <video controls width="100%" poster="https://media.w3.org/2010/05/sintel/poster.png">
+      <source src="https://media.w3.org/2010/05/sintel/trailer.mp4" type="video/mp4" />
+      Tu navegador no soporta la etiqueta <code>video</code>.
+    </video>
+    <figcaption>Video de demostración hospedado en media.w3.org (licencia libre).</figcaption>
+  </figure>
+
+</body>
+</html>
